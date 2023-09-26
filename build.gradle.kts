@@ -1,8 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.9.0"
     application
+    id("io.gitlab.arturbosch.detekt") version "1.23.1"
 }
 
 group = "learning"
