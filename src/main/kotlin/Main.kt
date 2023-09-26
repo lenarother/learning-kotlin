@@ -2,6 +2,7 @@ import learning.Order
 
 fun main(args: Array<String>) {
     println("Hello World!")
+    // style linters: Detekt, Ktlint, Kotlinter
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
@@ -9,8 +10,8 @@ fun main(args: Array<String>) {
 
     val ordersList = mutableListOf<Order>()
 
-    for (i in 1..10){
-        var order = Order(id=i, title="Title $i")
+    for (i in 1..10) {
+        var order = Order(id = i, title = "Title $i")
         ordersList.add(order)
         println(order.createOrder())
         println(order.price)
@@ -21,5 +22,4 @@ fun main(args: Array<String>) {
     // println(Order(id=1, title="Title 1") == Order(id=2, title="Title 2"))
     println(ordersList)
     println(ordersList.size)
-
 }
