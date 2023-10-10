@@ -12,9 +12,12 @@ fun main(args: Array<String>) {
 
     for (i in 1..10) {
         var order = Order(id = i, title = "Title $i")
-        order.price = 10f
+        order.price = null
         ordersList.add(order)
-        println(order.createOrder())
+        // println(order.createOrder())
+        var price = order.price?.let {
+            it+2
+        } ?: 0f
         //println(order.price)
         //println(order.shortTitle)
     }
