@@ -12,11 +12,26 @@ fun main(args: Array<String>) {
 
     for (i in 1..10) {
         var order = Order(id = i, title = "Title $i")
+        order.price = 10f
         ordersList.add(order)
         println(order.createOrder())
-        println(order.price)
-        println(order.shortTitle)
+        //println(order.price)
+        //println(order.shortTitle)
     }
+
+//    comperhansion
+//    orders = [Order1(), Order2(), Order3()]
+//    ids = [order.id for order in orders]
+
+    val ids = ordersList.associate { order -> order.id to order.title }
+    println(ids)
+    // {order.id:  order.title for  order in orders}
+
+    val numbers = listOf("one", "two", "three", "four")
+
+//    println(numbers.associateWith { it.length })
+
+    //println(ids)
 
     // println(Order(id=1, title="Title 1") == Order(id=1, title="Title 1"))
     // println(Order(id=1, title="Title 1") == Order(id=2, title="Title 2"))
