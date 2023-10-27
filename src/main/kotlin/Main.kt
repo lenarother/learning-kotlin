@@ -1,18 +1,21 @@
+import learning.FruitOrder
+import learning.FrutSupplier
 import learning.Order
+import learning.FruitArticle
 
 fun main(args: Array<String>) {
-    println("Hello World!")
+    // println("Hello World!")
     // style linters: Detekt, Ktlint, Kotlinter
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    // println("Program arguments: ${args.joinToString()}")
 
     val ordersList = mutableListOf<Order>()
 
     for (i in 1..10) {
-        var order = Order(id = i, title = "Title $i")
-        order.price = null
+        var order = FruitOrder(id = i, fruitTitle = "Title $i")
+        //order.price = null
         ordersList.add(order)
         // println(order.createOrder())
         var price = order.price?.let {
@@ -27,7 +30,7 @@ fun main(args: Array<String>) {
 //    ids = [order.id for order in orders]
 
     val ids = ordersList.associate { order -> order.id to order.title }
-    println(ids)
+    // println(ids)
     // {order.id:  order.title for  order in orders}
 
     val numbers = listOf("one", "two", "three", "four")
@@ -38,6 +41,11 @@ fun main(args: Array<String>) {
 
     // println(Order(id=1, title="Title 1") == Order(id=1, title="Title 1"))
     // println(Order(id=1, title="Title 1") == Order(id=2, title="Title 2"))
-    println(ordersList)
-    println(ordersList.size)
+    // println(ordersList)
+    // println(ordersList.size)
+
+    val fruitSup = FrutSupplier("Frutty")
+    println(fruitSup)
+    val fruitArt = FruitArticle("Apple", fruitSup)
+    fruitArt.send()
 }
